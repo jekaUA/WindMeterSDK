@@ -1,4 +1,22 @@
-###Integration Steps
+##Integration Steps
+
+###Requesting Data from the WeatherFlow Wind Meter 
+
+* Requesting data from the WeatherFlow Wind Meter app is simple, straightforward and only requires a single line of code though you may want to implement as provide which requires a few additional lines to check the validity and take the user to the App Store in the event that the WeatherFlow Wind Meter app is not installed.  
+
+The format of the URL is important for the purpose of properly routing the request.  This first portion of the URL (resource specifier) is static and tells the OS to open the Wind Meter app, the second portion of the URL following the colon (":") is the URL scheme you will register within your app, this tells the WeatherFlow Wind Meter app where to route the data following the user taking a reading.  
+ 
+Documentation on implementing a custom URL scheme is provided below in the "Receiving Data from WeatherFlow Wind Meter App" section.
+
+```
+if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"wfwindmeter:wf-example"]]) {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"wfwindmeter:wf-example"]];
+} else {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/us/app/weatherflow-wind-meter/id653579366?mt=8"]];
+}
+```
+
+###Receiving Data from WeatherFlow Wind Meter App
 
 ####Implement a Custom URL Scheme
 * Defining your app's custom URL scheme is all done in the Info.plist file. Click on the last line in the file and then click the "+" sign off to the right to add a new line. Select URL Types for the new item. Once that's added, click the grey arrow next to "URL Types" to show "Item 0". Set your URL identifier to a unique string.
