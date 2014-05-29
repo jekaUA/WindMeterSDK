@@ -2,7 +2,7 @@
 
 ###Requesting Data from the WeatherFlow Wind Meter 
 
-* Requesting data from the WeatherFlow Wind Meter app is simple, straightforward and only requires a single line of code though you may want to implement as provide which requires a few additional lines to check the validity and take the user to the App Store in the event that the WeatherFlow Wind Meter app is not installed.  
+Requesting data from the WeatherFlow Wind Meter app is simple, straightforward and only requires a single line of code though you may want to implement as provide which requires a few additional lines to check the validity and take the user to the App Store in the event that the WeatherFlow Wind Meter app is not installed.  
 
 The format of the URL is important for the purpose of properly routing the request.  This first portion of the URL (resource specifier) is static and tells the OS to open the Wind Meter app, the second portion of the URL following the colon (":") is the URL scheme you will register within your app, this tells the WeatherFlow Wind Meter app where to route the data following the user taking a reading.  
  
@@ -19,7 +19,7 @@ if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"wfwindm
 ###Receiving Data from WeatherFlow Wind Meter App
 
 ####Implement a Custom URL Scheme
-* Defining your app's custom URL scheme is all done in the Info.plist file. Click on the last line in the file and then click the "+" sign off to the right to add a new line. Select URL Types for the new item. Once that's added, click the grey arrow next to "URL Types" to show "Item 0". Set your URL identifier to a unique string.
+Defining your app's custom URL scheme is all done in the Info.plist file. Click on the last line in the file and then click the "+" sign off to the right to add a new line. Select URL Types for the new item. Once that's added, click the grey arrow next to "URL Types" to show "Item 0". Set your URL identifier to a unique string.
 
 After you've set the URL identifier, select that line and click the "+" sign again, and add a new item for URL Schemes. Then click the grey arrow next to "URL Schemes" to reveal "Item 0". Set the value for Item 0 to be your URL scheme name.
 
@@ -38,7 +38,7 @@ After you've set the URL identifier, select that line and click the "+" sign aga
 ```
 	
 ####Handling Custom URL Calls
-* In order for your app to respond when it receives a custom URL call, you must implement the application:handleOpenURL method in the application delegate class:
+In order for your app to respond when it receives a custom URL call, you must implement the application:handleOpenURL method in the application delegate class:
 
 ```
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
@@ -47,7 +47,7 @@ After you've set the URL identifier, select that line and click the "+" sign aga
 ```
 
 ####Parsing the Custom URL
-* Once data is passed to your application you must parse the data received.  The example application provides a complete implementation of the handleOpenURL method transforming the passed data into a dictionary.  In the example this dictionary's key / value pairs are displayed in an AlertView for visualization purposes but this dictionaries values can be stored and used as needed.
+Once data is passed to your application you must parse the data received.  The example application provides a complete implementation of the handleOpenURL method transforming the passed data into a dictionary.  In the example this dictionary's key / value pairs are displayed in an AlertView for visualization purposes but this dictionaries values can be stored and used as needed.
 
 ```
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
