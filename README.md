@@ -27,3 +27,40 @@ After you've set the URL identifier, select that line and click the "+" sign aga
     // handler code here
 }
 ```
+
+####Parsing the Custom URL
+* Once data is passed to your application you must parse the data received.  The example application provides a complete implementation of the handleOpenURL method transforming the passed data into a dictionary.  In the example this dictionary's key / value pairs are displayed in an AlertView for visualization purposes but this dictionaries values can be stored and used as needed.
+
+```
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    NSString* scheme = [url scheme];
+    if ([scheme hasPrefix:@"wf-example"]) {
+        
+        NSString *value = url.resourceSpecifier;
+        NSArray *components = [value componentsSeparatedByString:@"/"];
+        if ([[components objectAtIndex:0] isEqualToString:@"wfwindmeter"]) {
+            
+            NSMutableString * result = [[NSMutableString alloc] init];
+            for (int i=1; i < (int)[components count]; i++) {
+                
+                [result appendString:[components objectAtIndex:i]];
+            }
+            
+            NSString *decodedValue = [result stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            
+            NSError *error;
+            
+            NSDictionary *data = [NSJSONSerialization JSONObjectWithData: [decodedValue dataUsingEncoding:NSUTF8StringEncoding]
+                                                                 options: NSJSONReadingMutableContainers
+                                                                   error: &error];
+            
+            UIAlertView *anoAlert = [[UIAlertView alloc] initWithTitle:@"Data" message:[data description] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [anoAlert show];
+        }
+    }
+    
+    return YES;
+    
+}
+```
