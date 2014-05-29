@@ -5,7 +5,8 @@
 
 After you've set the URL identifier, select that line and click the "+" sign again, and add a new item for URL Schemes. Then click the grey arrow next to "URL Schemes" to reveal "Item 0". Set the value for Item 0 to be your URL scheme name.
 
-```<key>CFBundleURLTypes</key>
+```
+<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
 			<key>CFBundleURLName</key>
@@ -15,4 +16,14 @@ After you've set the URL identifier, select that line and click the "+" sign aga
 				<string>wf-example</string>
 			</array>
 		</dict>
-	</array>```
+	</array>
+```
+	
+####Handling Custom URL Calls
+* In order for your app to respond when it receives a custom URL call, you must implement the application:handleOpenURL method in the application delegate class:
+
+```
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    // handler code here
+}
+```
