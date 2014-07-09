@@ -1,3 +1,4 @@
+#Lightweight Integration
 ##Integration Steps
 
 ###Requesting Data from the WeatherFlow Wind Meter 
@@ -82,3 +83,6 @@ Once data is passed to your application you must parse the data received.  The e
     
 }
 ```
+
+#Full Integration
+##Integration Steps
