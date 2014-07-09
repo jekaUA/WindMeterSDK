@@ -56,9 +56,7 @@
 		E1821B10196C6D8E000FE3FF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E1821B12196C6D8E000FE3FF /* SDK_ExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDK_ExampleTests.m; sourceTree = "<group>"; };
 		E1821B1C196C6DF0000FE3FF /* 16k.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 16k.wav; sourceTree = "<group>"; };
-		E1821B39196C883E000FE3FF /* AnemometerInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnemometerInterface.h; sourceTree = "<group>"; };
 		E1821B3A196C883E000FE3FF /* AnemometerObservation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnemometerObservation.h; sourceTree = "<group>"; };
-		E1821B3B196C883E000FE3FF /* DeviceLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceLocation.h; sourceTree = "<group>"; };
 		E1821B3C196C883E000FE3FF /* SensorStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorStatus.h; sourceTree = "<group>"; };
 		E1821B3D196C883E000FE3FF /* WindMeterSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindMeterSDK.h; sourceTree = "<group>"; };
 		E1821B3E196C8845000FE3FF /* libWindMeterSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWindMeterSDK.a; sourceTree = "<group>"; };
@@ -176,9 +174,7 @@
 		E1821B38196C883E000FE3FF /* WindMeterSDKHeaders */ = {
 			isa = PBXGroup;
 			children = (
-				E1821B39196C883E000FE3FF /* AnemometerInterface.h */,
 				E1821B3A196C883E000FE3FF /* AnemometerObservation.h */,
-				E1821B3B196C883E000FE3FF /* DeviceLocation.h */,
 				E1821B3C196C883E000FE3FF /* SensorStatus.h */,
 				E1821B3D196C883E000FE3FF /* WindMeterSDK.h */,
 			);
@@ -370,6 +366,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -403,6 +400,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};
@@ -419,7 +417,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SDK Example/SDK Example-Prefix.pch";
 				INFOPLIST_FILE = "SDK Example/SDK Example-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SDK",
@@ -433,6 +431,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -450,7 +449,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SDK Example/SDK Example-Prefix.pch";
 				INFOPLIST_FILE = "SDK Example/SDK Example-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SDK",
@@ -464,6 +463,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

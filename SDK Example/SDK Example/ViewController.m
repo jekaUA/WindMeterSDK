@@ -51,7 +51,7 @@
         self.latestObservation = value;
         if ([self.latestObservation.statusCode intValue] == OK) {
             dispatch_sync(dispatch_get_main_queue(), ^{
-                console.text = [[NSString stringWithFormat:@"%@ (%@):  %f mps @ %f° \t(%f, %f)\n", self.latestObservation.timestamp, self.latestObservation.timezone, [self.latestObservation.windSpeed floatValue], [self.latestObservation.windDirectionDegreesTrue floatValue], [[value.deviceLocation objectForKey:@"latitude"] floatValue], [[self.latestObservation.deviceLocation objectForKey:@"longitude"] floatValue]] stringByAppendingString:console.text];
+                console.text = [[NSString stringWithFormat:@"%@ (%@):  %f mps @ %f° (%f, %f)\n", self.latestObservation.timestamp, self.latestObservation.timezone, [self.latestObservation.windSpeed floatValue], [self.latestObservation.windDirectionDegreesTrue floatValue], [[value.deviceLocation objectForKey:@"latitude"] floatValue], [[self.latestObservation.deviceLocation objectForKey:@"longitude"] floatValue]] stringByAppendingString:console.text];
             });
         } else if ([self.latestObservation.statusCode intValue] == ANEMOMTER_NOT_CONNECTED) {
             console.text = [@"DEVICE NOT CONNECTED!\n" stringByAppendingString:console.text];
