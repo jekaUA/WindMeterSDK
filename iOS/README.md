@@ -17,5 +17,5 @@ You can read more about this option within the read me file for [Full Integratio
 
 ---
 
-[Lightweight Integration for iOS]:https://github.com/WeatherFlow/WindMeterSDK/tree/master/iOS
-[Full Integration for iOS]:https://github.com/WeatherFlow/WindMeterSDK/tree/master/iOS
+[Lightweight Integration for iOS]:https://github.com/WeatherFlow/WindMeterSDK/tree/master/iOS/Lightweight%20Integration%20Example
+[Full Integration for iOS]:https://github.com/WeatherFlow/WindMeterSDK/tree/master/iOS/Full%20Integration%20Example
