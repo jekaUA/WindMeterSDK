@@ -21,9 +21,11 @@ You can read more about this option within the read me file for [Full Integratio
 ##Wind Meter SDK for Android
 
 ####Lightweight Integration
+Coming soon...
 
 ---
 ####Full Integration
+Coming soon...
 
 [Lightweight Integration for iOS]:https://github.com/WeatherFlow/WindMeterSDK/tree/master/iOS/Lightweight%20Integration%20Example
 [Full Integration for iOS]:https://github.com/WeatherFlow/WindMeterSDK/tree/master/iOS/Full%20Integration%20Example
