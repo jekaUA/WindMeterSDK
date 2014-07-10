@@ -52,9 +52,11 @@
         if ([self.latestObservation.statusCode intValue] == OK) {
             dispatch_sync(dispatch_get_main_queue(), ^{
                 console.text = [[NSString stringWithFormat:@"%@ (%@):  %f mps @ %f° (%f, %f)\n", self.latestObservation.timestamp, self.latestObservation.timezone, [self.latestObservation.windSpeed floatValue], [self.latestObservation.windDirectionDegreesTrue floatValue], [[value.deviceLocation objectForKey:@"latitude"] floatValue], [[self.latestObservation.deviceLocation objectForKey:@"longitude"] floatValue]] stringByAppendingString:console.text];
+                NSLog(@"%@",[self.latestObservation prettyJsonString]);
             });
         } else if ([self.latestObservation.statusCode intValue] == ANEMOMTER_NOT_CONNECTED) {
             console.text = [@"DEVICE NOT CONNECTED!\n" stringByAppendingString:console.text];
+            NSLog(@"DEVICE NOT CONNECTED!");
         }
     }];
     
